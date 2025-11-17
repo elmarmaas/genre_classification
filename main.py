@@ -97,7 +97,7 @@ def go(config: DictConfig):
             parameters={
                 "train_data": "segregated_data_train.csv:latest",
                 "model_config": model_config,
-                "export_artifact": "random_forest_model.pkl",
+                "export_artifact": config["random_forest_pipeline"]["export_artifact"],
                 "random_seed": str(config["main"]["random_seed"]),
                 "val_size": str(config["data"]["val_size"]),
                 "stratify": str(config["data"]["stratify"])
