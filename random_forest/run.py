@@ -120,6 +120,7 @@ def export_model(run, pipe, used_columns, X_val, val_pred, export_artifact):
             serialization_format=mlflow.sklearn.SERIALIZATION_FORMAT_CLOUDPICKLE,
             signature=signature,
             input_example=X_val.iloc[:2],
+            conda_env="conda.yml"
         )
 
         artifact = wandb.Artifact(
